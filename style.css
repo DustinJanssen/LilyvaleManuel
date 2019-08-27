@@ -1,30 +1,56 @@
+body {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.nav{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14pt;
+    line-height: 1.5em;
+}
+
 .nav ul {
     list-style-type: none;
-    background-color: hsl(234, 82%, 18%);
-    height: 40px;
+    background-image: linear-gradient(to top, hsla(0, 0%, 20%, 0.5), hsl(0, 0%, 20%));
+    height: 33px;
+    border: 1px solid hsl(0, 0%, 30%);
     overflow: hidden;
     clear: both;
 }
 
 .nav li {
     float: left;
-    color: hsl(355, 86%, 50%);
-    padding: 12px 5px;
+    color: hsl(0, 0%, 100%);
+    padding: 5px 5px 5px 5px;
 }
 
 .nav li a {
     display: block;
-    color: hsl(355, 86%, 50%);
+    color: hsl(0, 0%, 100%);
     text-align: center;
     text-decoration: none;
     padding-left: 7px;
   }
 
-#clock, #period {
+#clock {
     float: right;
+    border-left: 1px solid;
+    border-color: hsl(0, 0%, 20%); 
 }
 
+#home {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px solid;
+    border-color: hsl(0, 0%, 20%);
+}
+#period {
+    float: right;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-left: 1px solid;
+    border-color: hsl(0, 0%, 20%); 
+}
 #searchBar {
     padding-left: 31%;
-    padding-top: 10px;
+    padding-top: 2px;
 }
