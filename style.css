@@ -1,7 +1,20 @@
-body {
-    background-color: hsl(0, 0%, 100%);
+html, body {
+    height: 100%;
+    background-image: linear-gradient(135deg,hsl(0, 0%, 40%), hsl(0, 0%, 50%));
 }
 
+a {
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.hidden:hover {
+    opacity: 1;
+}
 .nav{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 14pt;
@@ -25,32 +38,55 @@ body {
 
 .nav li a {
     display: block;
-    color: hsl(0, 0%, 100%);
     text-align: center;
-    text-decoration: none;
     padding-left: 7px;
   }
+
+.flexContainer {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.flexItem {
+    background: hsl(0, 0%, 20%);
+    padding: 5px;
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+    line-height: 2em;
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    border: 1px solid hsl(0, 0%, 0%);
+}
+
+.flexItem:hover {
+    background: hsl(0, 0%, 15%)
+}
+
+.mainContent {
+    padding: 20% 2%;
+}
 
 #clock {
     float: right;
     border-left: 1px solid;
-    border-color: hsl(0, 0%, 20%); 
+    border-color: hsl(0, 0%, 0%); 
 }
 
 #home {
     padding-left: 10px;
     padding-right: 10px;
     border-right: 1px solid;
-    border-color: hsl(0, 0%, 20%);
+    border-color: hsl(0, 0%, 0%);
 }
 #period {
     float: right;
     padding-right: 15px;
     padding-left: 15px;
     border-left: 1px solid;
-    border-color: hsl(0, 0%, 20%); 
-}
-#searchBar {
-    padding-left: 31%;
-    padding-top: 2px;
+    border-color: hsl(0, 0%, 0%); 
 }
