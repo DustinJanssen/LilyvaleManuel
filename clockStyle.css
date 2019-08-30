@@ -8,6 +8,21 @@ a {
     text-decoration: none;
 }
 
+.mainText {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    padding-top: 5%;
+    line-height: 1.2em;
+}
+
+.mainText h1 {
+    font-size: 2em;
+    line-height: 1.25em;
+    color: hsl(0, 0%, 20%);
+}
+
 .nav{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 14pt;
@@ -33,53 +48,19 @@ a {
     display: block;
     text-align: center;
     padding-left: 7px;
-  }
+}
 
 .flexContainer {
     display: flex;
     list-style: none;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .flexItem {
     background: hsl(0, 0%, 20%);
-    padding: 5px;
-    width: 150px;
+    margin: 5px;
+    width: 250px;
     height: auto;
-    margin-top: 10px;
-    line-height: 2em;
-    color: hsl(0, 0%, 100%);
-    font-weight: bold;
-    font-size: 1.5em;
-    text-align: center;
     border: 1px solid hsl(0, 0%, 0%);
-}
-
-.flexItem:hover {
-    background: hsl(0, 0%, 15%)
-}
-
-.mainContent {
-    padding: 20% 2%;
-}
-
-#clock {
-    float: right;
-    border-left: 1px solid;
-    border-color: hsl(0, 0%, 0%); 
-}
-
-#home {
-    padding-left: 10px;
-    padding-right: 10px;
-    border-right: 1px solid;
-    border-color: hsl(0, 0%, 0%);
-}
-#period {
-    float: right;
-    padding-right: 15px;
-    padding-left: 15px;
-    border-left: 1px solid;
-    border-color: hsl(0, 0%, 0%); 
 }

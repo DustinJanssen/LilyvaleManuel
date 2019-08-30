@@ -118,3 +118,33 @@ function clock() {
     let dt = new Date();
     document.getElementById("clock").innerHTML = dt.toLocaleTimeString('en-US');
 }
+
+function dayDate() {
+    let dt = new Date();
+
+    switch (dt.getDay()) {
+        case 0:
+            document.getElementById("day").innerHTML = "Sunday";
+            break;
+        case 1:
+            document.getElementById("day").innerHTML = "Monday";
+            break;
+        case 2:
+            document.getElementById("day").innerHTML = "Tuesday";
+            break;
+        case 3:
+            document.getElementById("day").innerHTML = "Wednesday";
+            break;
+        case 4:
+            document.getElementById("day").innerHTML = "Thursday";
+            break;
+        case 5:
+            document.getElementById("day").innerHTML = "Friday";
+            break;
+        case 6:
+            document.getElementById("day").innerHTML = "Saturday";
+            break;
+    }
+
+    document.getElementById("date").innerHTML = dt.toLocaleDateString("en-US")
+}
