@@ -1,31 +1,32 @@
-function schoolClock() {
-    let dt = new Date();
-    let MODUALSTART　= new Date();
-    let MODUALEND　= new Date();
-    let FIRSTSTART　= new Date();
-    let FIRSTEND　= new Date();
-    let SECONDSTART　= new Date();
-    let SECONDEND　= new Date();
-    let THIRDSTART　= new Date();
-    let THIRDEND　= new Date();
-    let FOURTHSTART　= new Date();
-    let FOURTHEND　= new Date();
-    let FIFTHSTART = new Date();
-    let FIFTHEND = new Date();
-    let SIXTHSTART = new Date();
-    let SIXTHEND = new Date();
-    let SEVENTHSTART = new Date();
-    let SEVENTHEND = new Date();
-    let BREAKSTART = new Date();
-    let BREAKEND = new Date();
-    let LUNCHSTART = new Date();
-    let LUNCHEND = new Date();
-    let CLEANINGSTART = new Date();
-    let CLEANINGEND = new Date();
-    let BUSSTART = new Date();
-    let BUSEND = new Date();
+//Varibles for the school period functions.
+let dt = new Date();
+let MODUALSTART　= new Date();
+let MODUALEND　= new Date();
+let FIRSTSTART　= new Date();
+let FIRSTEND　= new Date();
+let SECONDSTART　= new Date();
+let SECONDEND　= new Date();
+let THIRDSTART　= new Date();
+let THIRDEND　= new Date();
+let FOURTHSTART　= new Date();
+let FOURTHEND　= new Date();
+let FIFTHSTART = new Date();
+let FIFTHEND = new Date();
+let SIXTHSTART = new Date();
+let SIXTHEND = new Date();
+let SEVENTHSTART = new Date();
+let SEVENTHEND = new Date();
+let BREAKSTART = new Date();
+let BREAKEND = new Date();
+let LUNCHSTART = new Date();
+let LUNCHEND = new Date();
+let CLEANINGSTART = new Date();
+let CLEANINGEND = new Date();
+let BUSSTART = new Date();
+let BUSEND = new Date();
 
-    if (dt.getDay() != 6) {
+//Check the day of week and sets the schedule accordingly.
+if (dt.getDay() != 6) {
     MODUALSTART.setHours(8,25,0);
     MODUALEND.setHours(8,55,0);
     FIRSTSTART.setHours(8,55,0);
@@ -50,7 +51,7 @@ function schoolClock() {
     CLEANINGEND.setHours(13,25,0);
     BUSSTART.setHours(15,55,0);
     BUSEND.setHours(16,5,0);
-    } else {
+} else {
     FIRSTSTART.setHours(8,35,0);
     FIRSTEND.setHours(9,20,0);
     SECONDSTART.setHours(9,25,0);
@@ -61,8 +62,29 @@ function schoolClock() {
     FOURTHEND.setHours(11,55,0);
     BUSSTART.setHours(12,0,0);
     BUSEND.setHours(12,5,0);
-    }
+}
 
+function timer(periodStart, periodEnd) {
+    //Takes period start and end and creates a countdown timer.
+    let interval = (periodEnd.getTime() - periodStart.getTime()).round();
+    
+    //Convert milliseconds into minutes and seconds.
+    interval = (interval/1000);
+    let seconds = interval%60;
+    let minutes = (interval-seconds)/60;
+    
+    //Loops downward through the interval displaying MM:SS.
+    let firstTime = true;
+    for (let i = minutes; i >= 0; i--) {
+
+    }
+}
+
+function schoolClock() {
+    //Updates the current school period.
+    let dt = new Date();
+    
+    //First, checks day then checks time. Compares current time with start/end time of periods.
     if (dt.getDay() != 6 && dt.getDay() != 0) {
         if (dt >= MODUALSTART && dt <= MODUALEND) {
             document.getElementById("period").innerHTML = "Modual";
@@ -121,7 +143,8 @@ function clock() {
 
 function dayDate() {
     let dt = new Date();
-
+    
+    //Updates the day of the week
     switch (dt.getDay()) {
         case 0:
             document.getElementById("day").innerHTML = "Sunday";
@@ -145,6 +168,7 @@ function dayDate() {
             document.getElementById("day").innerHTML = "Saturday";
             break;
     }
-
+    
+    //Updates the date
     document.getElementById("date").innerHTML = dt.toLocaleDateString("en-US")
 }
