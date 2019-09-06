@@ -64,20 +64,15 @@ if (dt.getDay() != 6) {
     BUSEND.setHours(12,5,0);
 }
 
-function timer(periodStart, periodEnd) {
-    //Takes period start and end and creates a countdown timer.
-    let interval = (periodEnd.getTime() - periodStart.getTime()).round();
-    
-    //Convert milliseconds into minutes and seconds.
-    interval = (interval/1000);
-    let seconds = interval%60;
-    let minutes = (interval-seconds)/60;
-    
-    //Loops downward through the interval displaying MM:SS.
-    let firstTime = true;
-    for (let i = minutes; i >= 0; i--) {
+function removeHighlight() {
+    let idArray = ["modual","first","second","third","fourth","fifth","sixth","seventh","break",
+        "lunch","cleaning","satFirst","satSecond","satThird","satFourth"]
+    idArray.forEach(function (id) {if (document.getElementById(id).classList.contains("highlight")) 
+        {document.getElementById(id).classList.remove("highlight")}});
+}
 
-    }
+function addHighlight(id) {
+    document.getElementById(id).classList.add("highlight");
 }
 
 function schoolClock() {
@@ -88,51 +83,71 @@ function schoolClock() {
     if (dt.getDay() != 6 && dt.getDay() != 0) {
         if (dt >= MODUALSTART && dt <= MODUALEND) {
             document.getElementById("period").innerHTML = "Modual";
+            addHighlight("modual");
         } else if (dt >= FIRSTSTART && dt <= FIRSTEND) {
             document.getElementById("period").innerHTML = "1st Period";
+            addHighlight("first");
         } else if (dt >= SECONDSTART && dt <= SECONDEND) {
             document.getElementById("period").innerHTML = "2nd Period";
+            addHighlight("second");
         } else if (dt >= THIRDSTART && dt <= THIRDEND) {
             document.getElementById("period").innerHTML = "3rd Period";
+            addHighlight("third");
         } else if (dt >= FOURTHSTART && dt <= FOURTHEND) {
             document.getElementById("period").innerHTML = "4th Period";
+            addHighlight("fourth");
         } else if (dt >= FIFTHSTART && dt <= FIFTHEND) {
             document.getElementById("period").innerHTML = "5th Period";
+            addHighlight("fifth");
         } else if (dt >= SIXTHSTART && dt <= SIXTHEND) {
             document.getElementById("period").innerHTML = "6th Period";
+            addHighlight("sixth");
         } else if (dt >= SEVENTHSTART && dt <= SEVENTHEND) {
             document.getElementById("period").innerHTML = "7th Period";
+            addHighlight("seventh");
         } else if (dt >= BREAKSTART && dt <= BREAKEND) {
             document.getElementById("period").innerHTML = "Break Period";
+            addHighlight("break");
         } else if (dt >= LUNCHSTART && dt <= LUNCHEND) {
             document.getElementById("period").innerHTML = "Lunch";
+            addHighlight("lunch");
         } else if (dt >= CLEANINGSTART && dt <= CLEANINGEND) {
             document.getElementById("period").innerHTML = "Cleaning";
+            addHighlight("cleaning");
         } else if (dt >= BUSSTART && dt <= BUSEND) {
             document.getElementById("period").innerHTML = "Bus";
         } else if ( dt >= MODUALSTART && dt <= BUSEND){
             document.getElementById("period").innerHTML = "In between periods";
+            removeHighlight();
         } else {
             document.getElementById("period").innerHTML = "Out";
+            removeHighlight();
         }
     } else if (dt.getDay() == 6) {
         if (dt >= FIRSTSTART && dt <= FIRSTEND) {
             document.getElementById("period").innerHTML = "1st Period";
+            addHighlight("satFirst");
         } else if (dt >= SECONDSTART && dt <= SECONDEND) {
             document.getElementById("period").innerHTML = "2nd Period";
+            addHighlight("satSecond");
         } else if (dt >= THIRDSTART && dt <= THIRDEND) {
             document.getElementById("period").innerHTML = "3rd Period";
+            addHighlight("satThird");
         } else if (dt >= FOURTHSTART && dt <= FOURTHEND) {
             document.getElementById("period").innerHTML = "4th Period";
+            addHighlight("satFourth");
         } else if (dt >= BUSSTART && dt <= BUSEND) {
             document.getElementById("period").innerHTML = "Bus";
         } else if ( dt >= MODUALSTART && dt <= BUSEND){
             document.getElementById("period").innerHTML = "In between periods";
+            removeHighlight();
         } else {
             document.getElementById("period").innerHTML = "Out";
+            removeHighlight();
         }
     } else {
         document.getElementById("period").innerHTML = "Out";
+        removeHighlight();
     }
 }
 

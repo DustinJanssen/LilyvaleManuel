@@ -69,3 +69,11 @@ a {
     font-size: 1.3em;
     line-height: 1.3em;
 }
+
+.highlight {
+    background: hsl(80, 55%, 66%);
+}
+
+.noHighlight {
+    background: hsl(0, 0%, 20%);
+}
