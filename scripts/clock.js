@@ -28,7 +28,7 @@ let BUSEND = new Date();
 //Check the day of week and sets the schedule accordingly.
 if (dt.getDay() != 6) {
     MODUALSTART.setHours(8,25,0);
-    MODUALEND.setHours(8,55,0);
+    MODUALEND.setHours(8,54,50);
     FIRSTSTART.setHours(8,55,0);
     FIRSTEND.setHours(9,40,0);
     SECONDSTART.setHours(9,45,0);

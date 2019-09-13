@@ -2,52 +2,66 @@
 <html>
     <head>
         <title>NLT Manuel for Lilyvale</title>
-        <link href="./clockStyle.css" rel="stylesheet" type="text/css">
-        <link href="./reset.css" rel="stylesheet" type="text/css">
+        <link href="./css/reset.css" rel="stylesheet" type="text/css">
+        <link href="./css/clockStyle.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="./images/LilyvaleIcon.ico">
-        <script src="./script.js"></script>
+        <script src="./scripts/clock.js"></script>
         <meta name="author" content="Dustin Janssen">
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class="nav">
-            <ul>
-                <li id="home"><a href="./index.html">Home</a></li>
-            </ul>
+        <div id="pageContainer">
+            <div id="contentWrap">
+                <div class="nav">
+                    <ul>
+                        <li id="home"><a href="./index.html">Home</a></li>
+                    </ul>
+                </div>
+                <div class="mainText">
+                    <h1>Current Time: </h1>
+                    <p id="clock"><script>let schoolLoop = setInterval(clock,1000);</script></p>
+                    <h1>Current Date: </h1>
+                    <p id="day"></p>
+                    <p id="date"></p>
+                    <script>dayDate();</script>
+                    <h1>Current Period: </h1>
+                    <p id="period"><script>let clockLoop = setInterval(schoolClock,1000);</script></p>
+                    <h1>Schedule: </h1>
+                    <section class="flexContainer">
+                        <ol class="flexItem">
+                            <li id="modual">Modual 8:25-8:55</li>
+                            <li id="first">First 8:55-9:40</li>
+                            <li id="second">Second 9:45-10:30</li>
+                            <li id="break">Break 10:30-10:40</li>
+                            <li id="third">Third 10:45-11:30</li>
+                            <li id="fourth">Fourth 11:35-12:20</li>
+                            <li id="lunch">Lunch 12:20-13:05</li>
+                            <li id="cleaning">Cleaning 13:10-13:25</li>
+                            <li id="fifth">Fifth 13:30-14:15</li>
+                            <li id="sixth">Sixth 14:20-15:05</li>
+                            <li id="seventh">Seventh 15:10-15:45</li>
+                            <li>Bus Leaves 16:00</li>
+                        </ol>
+                        <ol class="flexItem">
+                            <li id="satFirst">First 8:35-9:20</li>
+                            <li id="satSecond">Second 9:25-10:10</li>
+                            <li id="satThird">Third 10:15-11:00</li>
+                            <li id="satFourth">Fourth 11:05-11:55</li>
+                            <li>Bus Leaves 12:00</li>
+                        </ol>
+                    </section>
+                </div>
+            </div>
+            <footer id="footer">
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                    <em>Dark Mode</em>
+                </div>
+            </footer>
         </div>
-        <div class="mainText">
-            <h1>Current Time: </h1>
-            <p id="clock"><script>let schoolLoop = setInterval(clock,1000);</script></p>
-            <h1>Current Date: </h1>
-            <p id="day"></p>
-            <p id="date"></p>
-            <script>dayDate();</script>
-            <h1>Current Period: </h1>
-            <p id="period"><script>let clockLoop = setInterval(schoolClock,1000);</script></p>
-            <h1>Schedule: </h1>
-            <section class="flexContainer">
-                <ol class="flexItem">
-                    <li id="modual">Modual 8:25-8:55</li>
-                    <li id="first">First 8:55-9:40</li>
-                    <li id="second">Second 9:45-10:30</li>
-                    <li id="break">Break 10:30-10:40</li>
-                    <li id="third">Third 10:45-11:30</li>
-                    <li id="fourth">Fourth 11:35-12:20</li>
-                    <li id="lunch">Lunch 12:20-13:05</li>
-                    <li id="cleaning">Cleaning 13:10-13:25</li>
-                    <li id="fifth">Fifth 13:30-14:15</li>
-                    <li id="sixth">Sixth 14:20-15:05</li>
-                    <li id="seventh">Seventh 15:10-15:45</li>
-                    <li>Bus Leaves 16:00</li>
-                </ol>
-                <ol class="flexItem">
-                    <li id="satFirst">First 8:35-9:20</li>
-                    <li id="satSecond">Second 9:25-10:10</li>
-                    <li id="satThird">Third 10:15-11:00</li>
-                    <li id="satFourth">Fourth 11:05-11:55</li>
-                    <li>Bus Leaves 12:00</li>
-                </ol>
-            </section>
-        </div>
+        <script src="./scripts/themeToggle.js"></script>
     </body>
 </html>
