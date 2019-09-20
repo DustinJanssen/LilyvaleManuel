@@ -83,71 +83,71 @@ function schoolClock() {
     if (dt.getDay() != 6 && dt.getDay() != 0) {
         if (dt >= MODUALSTART && dt <= MODUALEND) {
             document.getElementById("period").innerHTML = "Modual";
-            addHighlight("modual");
+            if (periodPage) { addHighlight("modual"); }
         } else if (dt >= FIRSTSTART && dt <= FIRSTEND) {
             document.getElementById("period").innerHTML = "1st Period";
-            addHighlight("first");
+            if (periodPage) { addHighlight("first"); }
         } else if (dt >= SECONDSTART && dt <= SECONDEND) {
             document.getElementById("period").innerHTML = "2nd Period";
-            addHighlight("second");
+            if (periodPage) { addHighlight("second"); }
         } else if (dt >= THIRDSTART && dt <= THIRDEND) {
             document.getElementById("period").innerHTML = "3rd Period";
-            addHighlight("third");
+            if (periodPage) { addHighlight("third"); }
         } else if (dt >= FOURTHSTART && dt <= FOURTHEND) {
             document.getElementById("period").innerHTML = "4th Period";
-            addHighlight("fourth");
+            if (periodPage) { addHighlight("fourth"); }
         } else if (dt >= FIFTHSTART && dt <= FIFTHEND) {
             document.getElementById("period").innerHTML = "5th Period";
-            addHighlight("fifth");
+            if (periodPage) { addHighlight("fifth"); }
         } else if (dt >= SIXTHSTART && dt <= SIXTHEND) {
             document.getElementById("period").innerHTML = "6th Period";
-            addHighlight("sixth");
+            if (periodPage) { addHighlight("sixth"); }
         } else if (dt >= SEVENTHSTART && dt <= SEVENTHEND) {
             document.getElementById("period").innerHTML = "7th Period";
-            addHighlight("seventh");
+            if (periodPage) { addHighlight("seventh"); }
         } else if (dt >= BREAKSTART && dt <= BREAKEND) {
             document.getElementById("period").innerHTML = "Break Period";
-            addHighlight("break");
+            if (periodPage) { addHighlight("break"); }
         } else if (dt >= LUNCHSTART && dt <= LUNCHEND) {
             document.getElementById("period").innerHTML = "Lunch";
-            addHighlight("lunch");
+            if (periodPage) { addHighlight("lunch"); }
         } else if (dt >= CLEANINGSTART && dt <= CLEANINGEND) {
             document.getElementById("period").innerHTML = "Cleaning";
-            addHighlight("cleaning");
+            if (periodPage) { addHighlight("cleaning"); }
         } else if (dt >= BUSSTART && dt <= BUSEND) {
             document.getElementById("period").innerHTML = "Bus";
         } else if ( dt >= MODUALSTART && dt <= BUSEND){
             document.getElementById("period").innerHTML = "In between periods";
-            removeHighlight();
+            if (periodPage) { removeHighlight(); }
         } else {
             document.getElementById("period").innerHTML = "Out";
-            removeHighlight();
+            if (periodPage) { removeHighlight(); }
         }
     } else if (dt.getDay() == 6) {
         if (dt >= FIRSTSTART && dt <= FIRSTEND) {
             document.getElementById("period").innerHTML = "1st Period";
-            addHighlight("satFirst");
+            if (periodPage) { addHighlight("satFirst"); }
         } else if (dt >= SECONDSTART && dt <= SECONDEND) {
             document.getElementById("period").innerHTML = "2nd Period";
-            addHighlight("satSecond");
+            if (periodPage) { addHighlight("satSecond"); }
         } else if (dt >= THIRDSTART && dt <= THIRDEND) {
             document.getElementById("period").innerHTML = "3rd Period";
-            addHighlight("satThird");
+            if (periodPage) { addHighlight("satThird"); }
         } else if (dt >= FOURTHSTART && dt <= FOURTHEND) {
             document.getElementById("period").innerHTML = "4th Period";
-            addHighlight("satFourth");
+            if (periodPage) { addHighlight("satFourth"); }
         } else if (dt >= BUSSTART && dt <= BUSEND) {
             document.getElementById("period").innerHTML = "Bus";
         } else if ( dt >= MODUALSTART && dt <= BUSEND){
             document.getElementById("period").innerHTML = "In between periods";
-            removeHighlight();
+            if (periodPage) { removeHighlight(); }
         } else {
             document.getElementById("period").innerHTML = "Out";
-            removeHighlight();
+            if (periodPage) { removeHighlight(); }
         }
     } else {
         document.getElementById("period").innerHTML = "Out";
-        removeHighlight();
+        if (periodPage) { removeHighlight(); }
     }
 }
 

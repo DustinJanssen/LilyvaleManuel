@@ -5,7 +5,7 @@
         <link href="./css/reset.css" rel="stylesheet" type="text/css">
         <link href="./css/clockStyle.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="./images/LilyvaleIcon.ico">
-        <script src="./scripts/clock.js"></script>
+        <script src="./scripts/clock.js">let periodPage = true;</script>
         <meta name="author" content="Dustin Janssen">
         <meta charset="UTF-8">
     </head>
@@ -25,7 +25,7 @@
                     <p id="date"></p>
                     <script>dayDate();</script>
                     <h1>Current Period: </h1>
-                    <p id="period"><script>let clockLoop = setInterval(schoolClock,1000);</script></p>
+                    <p id="period"><script>let periodPage = true; let clockLoop = setInterval(schoolClock,1000);</script></p>
                     <h1>Schedule: </h1>
                     <section class="flexContainer">
                         <ol class="flexItem">
