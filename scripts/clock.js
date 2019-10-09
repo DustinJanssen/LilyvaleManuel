@@ -138,7 +138,7 @@ function schoolClock() {
             if (periodPage) { addHighlight("satFourth"); }
         } else if (dt >= BUSSTART && dt <= BUSEND) {
             document.getElementById("period").innerHTML = "Bus";
-        } else if ( dt >= MODUALSTART && dt <= BUSEND){
+        } else if ( dt >= FIRSTSTART && dt <= BUSEND){
             document.getElementById("period").innerHTML = "In between periods";
             if (periodPage) { removeHighlight(); }
         } else {
