@@ -5,34 +5,73 @@
         <link href="./css/reset.css" rel="stylesheet" type="text/css">
         <link href="./css/style.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="./images/LilyvaleIcon.ico">
-        <script src="./scripts/clock.js"></script>
+        <script src="./scripts/clock.js">let periodPage = true;</script>
         <meta name="author" content="Dustin Janssen">
         <meta charset="UTF-8">
     </head>
     <body>
         <div id="pageContainer">
+<!-- Main Content -->
             <div id="contentWrap">
-                <div class="nav">
-                    <ul>
-                        <li id="home"><a href="./index.html">Home</a></li>
-                        <li id="period">
-                            <script> let schoolLoop = setInterval(schoolClock,1000); </script>
-                        </li>
-                        <li id="clock">
-                            <script> let periodPage = false;　let clockLoop = setInterval(clock,1000); </script>
-                        </li>
-                    </ul>
+                <!-- Tab Lables-->
+                <button id="defaultOpen" class="tablink" onclick="openPage('Home', this)">Home</button>
+                <button class="tablink" onclick="openPage('Events', this)">Events</button>
+                <button class="tablink" onclick="openPage('Forms', this)">Forms</button>
+                <button class="tablink" onclick="openPage('CommonTasks', this)">Common Tasks</button>
+                <button class="tablink" onclick="openPage('Clock', this)">Clock</button>
+                <!--Tab Content-->
+                <div id="Home" class="tabcontent">
+                    <h2>Home</h2>
                 </div>
-                <div class="mainContent flexContainer">
-                    <a class="flexItem" href="./gettingStarted/gettingStartedIndex.html">Getting<br/>Started</a>
-                    <a class="flexItem" href="./commonTasks/commonTasksIndex.html">Common<br/>Tasks</a>
-                    <a class="flexItem" href="./events/eventsIndex.html">Events</a>
-                    <a class="flexItem" href="./forms/formsIndex.html">Forms</a>
-                    <a class="flexItem" href="./periodClock.html">Period<br/>Clock</a>
-                    <a class="flexItem" href="./usefulLinks.html">Useful<br/>Links</a>
-                    <a class="flexItem" href="./faq/faqIndex.html">FAQ</a>
+
+                <div id="Events" class="tabcontent">
+                    <h2>Events</h2>
+                </div>
+
+                <div id="Forms" class="tabcontent">
+                    <h2>Forms</h2>
+                </div>
+
+                <div id="CommonTasks" class="tabcontent">
+                    <h2>Common Tasks</h2>
+                </div>
+
+                <div id="Clock" class="tabcontent">
+                    <div class="mainText">
+                        <h1>Current Date and Time: </h1>
+                        <p id="clock"><script>let schoolLoop = setInterval(clock,1000);</script></p>
+                        <span id="day"></span> <span id="date"></span>
+                        <script>dayDate();</script>
+                        <h1>Current Period: </h1>
+                        <p id="period"><script>let periodPage = true; let clockLoop = setInterval(schoolClock,1000);</script></p>
+                        <h1>Schedule: </h1>
+                        <section class="flexContainer">
+                            <ol class="flexItem">
+                                <li id="modual">Modual 8:25-8:55</li>
+                                <li id="first">First 8:55-9:40</li>
+                                <li id="second">Second 9:45-10:30</li>
+                                <li id="break">Break 10:30-10:40</li>
+                                <li id="third">Third 10:45-11:30</li>
+                                <li id="fourth">Fourth 11:35-12:20</li>
+                                <li id="lunch">Lunch 12:20-13:05</li>
+                                <li id="cleaning">Cleaning 13:10-13:25</li>
+                                <li id="fifth">Fifth 13:30-14:15</li>
+                                <li id="sixth">Sixth 14:20-15:05</li>
+                                <li id="seventh">Seventh 15:10-15:45</li>
+                                <li>Bus Leaves 16:00</li>
+                            </ol>
+                            <ol class="flexItem">
+                                <li id="satFirst">First 8:35-9:20</li>
+                                <li id="satSecond">Second 9:25-10:10</li>
+                                <li id="satThird">Third 10:15-11:00</li>
+                                <li id="satFourth">Fourth 11:05-11:55</li>
+                                <li>Bus Leaves 12:00</li>
+                            </ol>
+                        </section>
+                    </div>
                 </div>
             </div>
+<!-- Footer Start -->
             <footer id="footer">
                 <div class="theme-switch-wrapper">
                     <label class="theme-switch" for="checkbox">
@@ -44,5 +83,6 @@
             </footer>
         </div>
         <script src="./scripts/themeToggle.js"></script>
+        <script src="scripts/tabs.js"></script>
     </body>
 </html>
