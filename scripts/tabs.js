@@ -21,3 +21,20 @@ function openPage (pageName, elmnt) {
 }
 
 document.getElementById('defaultOpen').click();
+
+//Accordion
+let accordion = document.getElementsByClassName('accordion');
+let i, panel
+
+for (i = 0; i < accordion.length; i++) {
+    accordion[i].addEventListener('click', function() {
+        this.classList.toggle('active');
+
+        panel = this.nextElementSibling;
+        if (panel.style.display === 'block') {
+            panel.style.display = 'none';
+        } else {
+            panel.style.display = 'block'
+        }
+    });
+}

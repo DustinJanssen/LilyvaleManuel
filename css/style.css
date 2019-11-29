@@ -4,8 +4,8 @@
     --BackgroundFlex: hsl(178, 43%, 58%);
     --BackgroundFlexHover: hsl(178, 43%, 65%);
     --Border: hsl(178, 43%, 50%);
-    --UiBackgroundImage: linear-gradient(to top, hsla(178, 43%, 58%, 0.7), hsl(178, 43%, 58%));
-    --UiBorder: hsl(178, 43%, 55%);
+    --AccordionBackgroundImage: linear-gradient(to top, hsl(178, 43%, 58%), hsl(178, 43%, 58%));
+    --AccordionHover: linear-gradient(to top, hsl(178, 43%, 68%), hsl(178, 53%, 58%));
     --highlightColor: hsl(61, 54%, 66%);
 }
 
@@ -15,8 +15,8 @@
     --BackgroundFlex: hsl(178, 31%, 30%);
     --BackgroundFlexHover: hsl(178, 31%, 35%);
     --Border: hsl(178, 32%, 10%);
-    --UiBackgroundImage: linear-gradient(to top, hsl(178, 31%, 35%), hsl(178, 31%, 30%));
-    --UiBorder: hsl(178, 32%, 10%);
+    --AccordionBackgroundImage: linear-gradient(to top, hsl(178, 31%, 35%), hsl(178, 31%, 30%));
+    --AccordionHover: linear-gradient(to top, hsl(178, 31%, 45%), hsl(178, 31%, 40%));
     --highlightColor: hsl(80, 55%, 66%);
 }
 
@@ -93,7 +93,42 @@ h2 {
     height: 100%;
 }
 
-/*Theme toggle switch*/
+/* Style accordion buttons */
+.accordion {
+    background-image: var(--AccordionBackgroundImage);
+    color: var(--TextColor);
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-image: var(--AccordionHover);
+}
+
+.accordion:after {
+    content: '+';
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: '-';
+}
+
+/* Style accordion panel */
+.panel {
+    padding: 5px 15px;
+    background-image: var(--BackgroundImage);
+    display: none;
+    overflow: hidden;
+}
+
+/* Theme toggle switch */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
@@ -159,7 +194,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/*footer position*/
+/* footer position */
 
 #pageContainer {
     position: relative;
