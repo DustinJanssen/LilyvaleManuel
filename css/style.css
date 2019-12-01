@@ -6,6 +6,7 @@
     --Border: hsl(178, 43%, 50%);
     --AccordionBackgroundImage: linear-gradient(to top, hsl(178, 43%, 58%), hsl(178, 43%, 58%));
     --AccordionHover: linear-gradient(to top, hsl(178, 43%, 68%), hsl(178, 53%, 58%));
+    --PanelBackground: hsl(87, 22%, 90%);
     --highlightColor: hsl(61, 54%, 66%);
 }
 
@@ -17,6 +18,7 @@
     --Border: hsl(178, 32%, 10%);
     --AccordionBackgroundImage: linear-gradient(to top, hsl(178, 31%, 35%), hsl(178, 31%, 30%));
     --AccordionHover: linear-gradient(to top, hsl(178, 31%, 45%), hsl(178, 31%, 40%));
+    --PanelBackground: hsl(90, 2%, 49%);
     --highlightColor: hsl(80, 55%, 66%);
 }
 
@@ -123,7 +125,7 @@ h2 {
 /* Style accordion panel */
 .panel {
     padding: 5px 15px;
-    background-image: var(--BackgroundImage);
+    background: var(--PanelBackground);
     display: none;
     overflow: hidden;
 }
